@@ -1,8 +1,12 @@
+import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 
+import 'layout/counter.dart';
 import 'layout/home_layout.dart';
+import 'shared/bloc_obsrever.dart';
 
 void main() {
+  Bloc.observer = MyBlocObserver();
   runApp(const MyApp());
 }
 
@@ -18,7 +22,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         backgroundColor: Colors.white,
       ),
-      home: const HomeLayout(),
+      home: HomeLayout(),
     );
   }
 }
